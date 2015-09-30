@@ -10,6 +10,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('json spaces', 2);
 
+app.post('/questions', questions.create);
 app.get('/questions', questions.list);
+app.get('/questions/:id', questions.find);
+app.delete('/questions/:id', questions.delete);
 
 app.listen(3000);
